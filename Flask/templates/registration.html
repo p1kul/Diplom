@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h1> <p align="center">Registration </p> </h1>
+    <form method="post">
+
+        <p align="center"><label for="login">Введите логин:</label>
+            <input type="text" id="login" name="login" maxlength="30" required></p>
+
+        <p align="center"><label for="password">Введите пароль:</label>
+            <input type="text" id="password" name="password"  required></p>
+
+        <p align="center"><label for="repeat_password">Повторите пароль:</label>
+            <input type="text" id="repeat_password" name="repeat_password" required></p>
+
+
+        <p align="center"><button type="submit">Зарегистрироваться</button></p>
+    </form>
+    {% block error %}
+<p align="center">{{ error }}</p>
+    {% endblock %}
+</body>
+</html>

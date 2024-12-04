@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1> <p align="center"> Login </p> </h1>
+        <form method="post">
+            {%csrf_token %}
+            <p align="center"><label for="login">Введите логин:</label>
+                <input type="text" id="login" name="login" maxlength="30" required></p>
+
+            <p align="center"><label for="password">Введите пароль:</label>
+                <input type="text" id="password" name="password"  required></p>
+            <p align="center"><button type="submit">Войти</button></p>
+        </form>
+    <p align="center"><a href="/loging/helper"><button>Забыли пароль?</button></a> </p>
+        {% block error %}
+    <p align="center">{{ error }}</p>
+        {% endblock %}
+</body>
+</html>
