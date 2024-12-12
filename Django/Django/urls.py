@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rul.views import home, registration, loging, helper, wait, main
+from rul.views import home, registration, loging, helper, wait, main, randoms
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('registration/', registration),
     path('loging/', loging),
-    path('loging/helper/',helper),
+    path('loging/helper/', helper),
     path('loging/helper/wait/', wait),
-    path('main/', main)
+    path('loging/main/', main),
+    path('loging/main/randoms/', randoms)
 ]
+

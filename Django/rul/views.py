@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import UserRegister
 from .models import *
+from random import choice
 
 
 def home(request):
@@ -65,4 +66,17 @@ def wait(request):
 
 
 def main(request):
+    if request.method == 'POST':
+        something = request.POST.get('something')
+        Randomaizer.objects.create(something=something)
+        return render(request, 'main.html')
     return render(request, 'main.html')
+
+
+def randoms(request):
+        ran = Randomaizer.objects.all()
+        ran_list = [i.something for i in ran]
+        answer = choice(ran_list)
+        slovo = ''.join(answer)
+        return render(request, 'randoms.html', {'message': slovo})
+
